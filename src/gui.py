@@ -47,6 +47,7 @@ class App(tk.Tk):
         self.canvas.delete("all")
 
     def _predict_digit(self, imagen):
+        """Ajustamos la imagen y hacemos la predicción"""
         imagen = imagen.resize((28, 28))\
                        .convert('L')
         imagen = 1 - np.array(imagen).reshape(1, 28, 28, 1)/255.0
